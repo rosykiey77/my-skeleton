@@ -56,3 +56,18 @@ export const arraytitle = writable(
         }
     ]
 )
+
+export const arraycost = writable(
+    [
+        {
+            icon: "mdi:company",
+            listcost: [
+                {
+                    iconlist: "lucide:monitor-dot",
+                    headlist: "HRIS",
+                    titlelist: "Software yang bertujuan memberikan informasi sumber daya manusia"
+                }
+            ]
+        }
+    ]
+)

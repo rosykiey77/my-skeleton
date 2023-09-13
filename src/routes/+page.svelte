@@ -2,7 +2,7 @@
 	import imgBg from '../assets/bg2.png';
 	import imgMoto from '../assets/bgg3.png';
 	import Card from '../component/card.svelte';
-	import { arraytitle } from '../store';
+	import { arraytitle, arraycost } from '../store';
 	import Icon from '@iconify/svelte';
 </script>
 
@@ -33,43 +33,83 @@
 		</div>
 	</div>
 </div>
-<div class="flex flex-col max-w-full md:max-h-screen">
-	<div class="pb-8 text-center basis-full">
-		<h1 class="text-3xl font-bold leading-7 text-surface-600 font_gelaso">
-			Apa keuntungan bekerja sama dengan kami ?
-		</h1>
-	</div>
-	<div class="ml-10 mr-10 basis-full">
-		<div class="grid gap-2 text-center md:gap-4 md:grid-cols-2 md:grid-flow-row lg:grid-cols-3">
-			{#each $arraytitle as item}
-				<div>
-					<Card>
-						<span slot="theader">
-							<button type="button" class="btn-icon btn-icon-xl variant-soft-surface"
-								><Icon icon={item.iconset} style="font-size: 35px" /></button
-							>
-							<div class="bg-yellow-200 rounded-full" />
-						</span>
-						<span slot="tcontent">
-							<h2 class="text-xl font-bold leading-10 font_gelaso text-surface-600">
-								{item.title}
-							</h2>
-						</span>
-						<span slot="tfooter">
-							<h2 class="text-lg leading-tight font_gelaso text-surface-600">
-								{item.titleFooter}
-							</h2>
-						</span>
-					</Card>
-				</div>
-			{/each}
+<div class="containe mx-auto min-w-fit md:max-h-screen">
+	<div>
+		<div class="pb-8 text-center">
+			<h1 class=" text-2xl md:text-3xl font-bold leading-7 text-surface-600 font_gelaso">
+				Apa keuntungan bekerja sama dengan kami ?
+			</h1>
 		</div>
-	</div>
-</div>
-<div class="flex flex-col max-w-full max-h-screen pt-10 bg-yellow-200">
-	<div class="text-center basis-full">
-		<h1 class="text-3xl font-bold leading-7 text-surface-600 font_gelaso">
-			berikutdaftar harga pengerjaan software
-		</h1>
+		<div class="ml-10 mr-10">
+			<div class="grid gap-2 text-center md:gap-4 md:grid-cols-2 md:grid-flow-row lg:grid-cols-3">
+				{#each $arraytitle as item}
+					<div>
+						<Card classCard="card variant-ghost-surface lg:h-64 md:h-72">
+							<span slot="theader">
+								<button type="button" class="btn-icon btn-icon-xl variant-soft-surface"
+									><Icon icon={item.iconset} style="font-size: 35px" /></button
+								>
+								<div class="bg-yellow-200 rounded-full" />
+							</span>
+							<span slot="tcontent">
+								<h2 class="text-xl font-bold leading-10 font_gelaso text-surface-600">
+									{item.title}
+								</h2>
+							</span>
+							<span slot="tfooter">
+								<h2 class="text-lg leading-tight font_gelaso text-surface-600">
+									{item.titleFooter}
+								</h2>
+							</span>
+						</Card>
+					</div>
+				{/each}
+			</div>
+		</div>
+		<div class="text-center basis-full">
+			<h1 class="text-3xl font-bold leading-7 text-surface-600 font_gelaso pt-10">
+				berikut daftar harga pengerjaan software
+			</h1>
+		</div>
+		<div class="ml-10 mr-10 pt-5">
+			<div class="grid gap-2 text-center md:gap-4 md:grid-cols-2 md:grid-flow-row lg:grid-cols-3">
+				{#each $arraycost as itemlist}
+					<div>
+						<Card classCard="card variant-soft-surface lg:h-64 md:h-72">
+							<span slot="theader">
+								<button type="button" class="btn-icon btn-icon-xl variant-ringed-surface"
+									><Icon icon={itemlist.icon} style="font-size: 35px" /></button
+								>
+								<div class="bg-yellow-200 rounded-full" />
+							</span>
+							<span slot="tcontent">
+								<div class=" flex flex-row items-center justify-center">
+									{#each $itemlist.listcost as itemlist}
+										<div class=" basis-1/4 pl-5">
+											<Icon icon="lucide:monitor-dot" style="font-size: 45px" />
+										</div>
+										<div class=" basis-3/4 text-left">
+											<div class="flex flex-col">
+												<div class="text-xl font-bold font_gelaso text-surface-600">
+													<b>HRIS</b>
+												</div>
+												<div class="text-lg font_gelaso leading-6 text-surface-500">
+													Software yang bertujuan memberikan informasi sumber daya manusia
+												</div>
+											</div>
+										</div>
+									{/each}
+								</div>
+							</span>
+							<span slot="tfooter">
+								<h2 class="text-3xl leading-tight font_gelaso text-surface-600">
+									<b />
+								</h2>
+							</span>
+						</Card>
+					</div>
+				{/each}
+			</div>
+		</div>
 	</div>
 </div>
