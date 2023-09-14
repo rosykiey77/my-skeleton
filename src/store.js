@@ -61,13 +61,30 @@ export const arraycost = writable(
     [
         {
             icon: "mdi:company",
-            listcost: [
-                {
-                    iconlist: "lucide:monitor-dot",
-                    headlist: "HRIS",
-                    titlelist: "Software yang bertujuan memberikan informasi sumber daya manusia"
-                }
-            ]
+            group: "a"
+        }
+    ]
+)
+
+export const listarraycost = writable(
+    [
+        {
+            iconlist: "lucide:monitor-dot",
+            headlist: "HRIS",
+            titlelist: "Software yang bertujuan memberikan informasi sumber daya manusia",
+            group: "a"
+        },
+        {
+            iconlist: "lucide:monitor-dot",
+            headlist: "HRIS",
+            titlelist: "Software yang bertujuan memberikan informasi sumber daya manusia",
+            group: "a"
+        },
+        {
+            iconlist: "lucide:monitor-dot",
+            headlist: "HRIS",
+            titlelist: "Software yang bertujuan memberikan informasi sumber daya manusia",
+            group: "a"
         }
     ]
 )

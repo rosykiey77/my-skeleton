@@ -2,7 +2,7 @@
 	import imgBg from '../assets/bg2.png';
 	import imgMoto from '../assets/bgg3.png';
 	import Card from '../component/card.svelte';
-	import { arraytitle, arraycost } from '../store';
+	import { arraytitle, arraycost, listarraycost } from '../store';
 	import Icon from '@iconify/svelte';
 </script>
 
@@ -75,7 +75,7 @@
 			<div class="grid gap-2 text-center md:gap-4 md:grid-cols-2 md:grid-flow-row lg:grid-cols-3">
 				{#each $arraycost as itemlist}
 					<div>
-						<Card classCard="card variant-soft-surface lg:h-64 md:h-72">
+						<Card classCard="card variant-soft-surface">
 							<span slot="theader">
 								<button type="button" class="btn-icon btn-icon-xl variant-ringed-surface"
 									><Icon icon={itemlist.icon} style="font-size: 35px" /></button
@@ -83,21 +83,25 @@
 								<div class="bg-yellow-200 rounded-full" />
 							</span>
 							<span slot="tcontent">
-								<div class=" flex flex-row items-center justify-center">
-									{#each $itemlist.listcost as itemlist}
-										<div class=" basis-1/4 pl-5">
-											<Icon icon="lucide:monitor-dot" style="font-size: 45px" />
-										</div>
-										<div class=" basis-3/4 text-left">
-											<div class="flex flex-col">
-												<div class="text-xl font-bold font_gelaso text-surface-600">
-													<b>HRIS</b>
+								<div class="grid grid-rows-3">
+									{#each $listarraycost as listcost}
+										{#if (itemlist.group = listcost.group)}
+											<div class=" flex flex-row items-center justify-center pt-4">
+												<div class=" basis-1/4 pl-5">
+													<Icon icon={listcost.iconlist} style="font-size: 45px" />
 												</div>
-												<div class="text-lg font_gelaso leading-6 text-surface-500">
-													Software yang bertujuan memberikan informasi sumber daya manusia
+												<div class=" basis-3/4 text-left">
+													<div class="flex flex-col">
+														<div class="text-xl font-bold font_gelaso text-surface-600">
+															<b>{listcost.headlist}</b>
+														</div>
+														<div class="text-lg font_gelaso leading-6 text-surface-500">
+															{listcost.titlelist}
+														</div>
+													</div>
 												</div>
 											</div>
-										</div>
+										{/if}
 									{/each}
 								</div>
 							</span>
