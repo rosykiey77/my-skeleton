@@ -68,7 +68,7 @@
 		</div>
 		<div class="text-center basis-full">
 			<h1 class="text-3xl font-bold leading-7 text-surface-600 font_gelaso pt-10">
-				berikut daftar harga pengerjaan software
+				Daftar harga pengerjaan software
 			</h1>
 		</div>
 		<div class="ml-10 mr-10 pt-5">

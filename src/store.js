@@ -76,14 +76,14 @@ export const listarraycost = writable(
         },
         {
             iconlist: "lucide:monitor-dot",
-            headlist: "HRIS",
-            titlelist: "Software yang bertujuan memberikan informasi sumber daya manusia",
+            headlist: "ERP",
+            titlelist: "Software yang terintegrasi dengan proses-proses bisnis utama",
             group: "a"
         },
         {
             iconlist: "lucide:monitor-dot",
-            headlist: "HRIS",
-            titlelist: "Software yang bertujuan memberikan informasi sumber daya manusia",
+            headlist: "LOGISTIK PURCHASE",
+            titlelist: "Software pembelian dan management stok barang",
             group: "a"
         }
     ]
